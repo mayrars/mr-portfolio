@@ -14,4 +14,11 @@ export class PadreComponent {
   decrementar(){
     this.valorContador--;
   }
+
+  mensajeRecibido: string= ''
+
+  recibirMensaje($event: string){
+    this.mensajeRecibido = $event
+  }
+  
 }

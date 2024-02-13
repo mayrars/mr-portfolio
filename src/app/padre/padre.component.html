@@ -3,4 +3,6 @@
 <button (click)="incrementar()">Incrementar</button>
 <button (click)="decrementar()">Decrementar</button>
 
-<app-hijo></app-hijo>
+<app-hijo (mensajeDesdeHijo)="recibirMensaje($event)"></app-hijo>
+
+<h5>El mensaje recibido desde el hijo es: {{mensajeRecibido}}</h5>
