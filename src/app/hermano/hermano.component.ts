@@ -9,20 +9,22 @@ import { ServicioFamiliarService } from '../servicio-familiar.service';
 export class HermanoComponent implements OnInit{
   nombre?: string
   //Injectando el servicio
-  constructor (
+  /*constructor (
     private _servicioFamiliar : ServicioFamiliarService
-  ){}
+  ){}*/
+
+  private _servicioFamiliar2 = inject(ServicioFamiliarService)
 
   ngOnInit(): void{
-    this._servicioFamiliar.setHermanoPequeno('Pedro')
-    this.nombre = this._servicioFamiliar.getHermanoPequeno()
+    this._servicioFamiliar2.setHermanoPequeno('Pedro')
+    this.nombre = this._servicioFamiliar2.getHermanoPequeno()
   }
 
   saludar(){
-    this._servicioFamiliar.saludar(this._servicioFamiliar.getHermanoGrande() || '')
+    this._servicioFamiliar2.saludar(this._servicioFamiliar2.getHermanoGrande() || '')
   }
 
   preguntar(){
-    console.log(this._servicioFamiliar.preguntarPorHijo())
+    console.log(this._servicioFamiliar2.preguntarPorHijo())
   }
 }
