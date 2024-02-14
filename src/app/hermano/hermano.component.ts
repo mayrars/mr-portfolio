@@ -1,10 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
+import { ServicioFamiliarService } from '../servicio-familiar.service';
 
 @Component({
   selector: 'app-hermano',
   templateUrl: './hermano.component.html',
   styleUrls: ['./hermano.component.scss']
 })
-export class HermanoComponent {
+export class HermanoComponent implements OnInit{
+  nombre?: string
+  //Injectando el servicio
+  constructor (
+    private _servicioFamiliar : ServicioFamiliarService
+  ){}
 
+  ngOnInit(): void{
+    this._servicioFamiliar.setHermanoPequeno('Pedro')
+    this.nombre = this._servicioFamiliar.getHermanoPequeno()
+  }
+
+  saludar(){
+    this._servicioFamiliar.saludar(this._servicioFamiliar.getHermanoGrande() || '')
+  }
+
+  preguntar(){
+    console.log(this._servicioFamiliar.preguntarPorHijo())
+  }
 }
