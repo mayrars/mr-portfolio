@@ -15,7 +15,7 @@ export class PadreComponent implements OnInit {
   ){}
 
   ngOnInit(): void{
-    this._servicioFamiliar.setHermanoGrande('Juan')
+    this._servicioFamiliar.setHermanoGrande('juan')
     this.nombre = this._servicioFamiliar.getHermanoGrande()
   }
 
