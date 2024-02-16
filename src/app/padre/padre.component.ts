@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PadreComponent implements OnInit {
   nombre?: string
+  fecha?: Date= new Date()
+  dolar?: number= 17.98
+  pi?: number = Math.PI
+  factor: number = 0.5
 
   //Injectando el servicio
   constructor (
